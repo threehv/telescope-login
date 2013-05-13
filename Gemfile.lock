@@ -1,5 +1,6 @@
-PATH
-  remote: /home/rahoulb/src/telescope/masq
+GIT
+  remote: git@github.com:threehv/masq.git
+  revision: 20274fe0574eb9f750ada7162e5ca27e47bbc961
   specs:
     masq (0.2.8)
       i18n_data
