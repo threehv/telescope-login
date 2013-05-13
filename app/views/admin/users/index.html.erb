@@ -1,0 +1,16 @@
+<h1>Users</h1>
+
+<ul class="users thumbnails">
+  <% users.each do | user | %>
+    <%= content_tag_for :li, user, class: 'span3' do %>
+      <div class="thumbnail user">
+        <h3><%= user.login %></h3>
+        <p><%= user.email %></p>
+        <div class="footer">
+          <a href="#"><%= edit_icon %></a>
+          <a href="#"><%= remove_icon %></a>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>

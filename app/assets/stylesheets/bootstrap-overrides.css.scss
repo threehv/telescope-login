@@ -1,0 +1,28 @@
+.content_row {
+  margin-top: 3em;
+}
+
+body {
+  font-family: 'proxima-nova', 'Verdana', 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
+.navbar {
+  .navbar-inner {
+    border-bottom: 4px solid #de1867;
+  }
+  .brand {
+    font-family: 'proxima-nova', 'Verdana', 'Helvetica Neue', 'Arial', 'sans-serif';
+    font-weight: bold;
+  }
+}
+
+.content_row {
+  padding-top: 3em;
+}
+
+.nav-pills { 
+  a { 
+    font-size: 14pt;
+  }
+}
+
