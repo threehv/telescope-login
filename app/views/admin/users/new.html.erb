@@ -1,0 +1,20 @@
+<h1>Add a user</h1>
+
+<%= form_for user, url: admin_users_path do | form | %>
+  <fieldset>
+    <%= form.label :login %>
+    <%= error_message_on user, :login %>
+    <%= form.text_field :login %>
+    <%= form.label :email %>
+    <%= error_message_on user, :email %>
+    <%= form.text_field :email, type: 'email' %>
+    <%= form.label :password %>
+    <%= error_message_on user, :password %>
+    <%= form.password_field :password %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </fieldset>
+  <div class="form-actions">
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
+  </div>
+<% end %>

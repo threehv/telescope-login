@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:threehv/masq.git
-  revision: 20274fe0574eb9f750ada7162e5ca27e47bbc961
+  revision: 51dc2a1c32ae92afcb8d56238bc51c48ee7a328d
   specs:
     masq (0.2.8)
       i18n_data
@@ -69,6 +69,7 @@ GEM
     colorize (0.5.8)
     database_cleaner (0.9.1)
     diff-lcs (1.2.4)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -81,12 +82,11 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.7.7)
+    json (1.8.0)
     kgio (2.8.0)
     kolo (0.3.3)
     libv8 (3.11.8.17)
-    mail (2.5.3)
-      i18n (>= 0.4.0)
+    mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
@@ -192,6 +192,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner
+  dynamic_form
   jquery-rails
   kolo
   masq!

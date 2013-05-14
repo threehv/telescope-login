@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'unicorn'
 gem 'masq', git: 'git@github.com:threehv/masq.git'# path: '/home/rahoulb/src/telescope/masq'
 gem 'kolo'
+gem 'dynamic_form'
 
 group :development, :test do
   gem 'rspec'

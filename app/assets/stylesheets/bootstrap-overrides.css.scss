@@ -16,8 +16,8 @@ body {
   }
 }
 
-.content_row {
-  padding-top: 3em;
+.lower-header {
+  padding-top: 4em;
 }
 
 .nav-pills { 
@@ -26,3 +26,13 @@ body {
   }
 }
 
+form {
+  .field_with_errors {
+    label {
+      color: #b94a48;
+    }
+  }
+  .formError {
+    color: #b94a48;
+  }
+}
