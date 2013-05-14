@@ -6,7 +6,12 @@ module Authenticator
 
     def all
       raise SecurityBreach.new if account.nil? || (account == :false) || !account.admin?
-      yield user_storage.all if block_given?
+      yield user_storage.all 
+    end
+
+    def find name
+      raise SecurityBreach.new if account.nil? || (account == :false) || !account.admin?
+      yield user_storage.find_by_login name
     end
 
     # Access users via the ActiveRecord Account class unless we are explicitly overridden

@@ -56,7 +56,7 @@ class Spinach::Features::AdministratorManagesUsers < Spinach::FeatureSteps
   end
 
   step 'I choose to delete a user' do
-    within "#user_#{@users.first.id}" do
+    within "#account_#{@users.first.id}" do
       click_link 'Delete'
     end
   end

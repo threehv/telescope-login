@@ -1,0 +1,12 @@
+<h1>Remove <%= user.login %>?</h1>
+
+<form action="<%= admin_user_path(user) %>" method="POST">
+  <fieldset>
+    <legend>This cannot be undone</legend>
+    <input type="hidden" name="_method" value="DELETE"/>
+  </fieldset>
+  <div class="form-actions">
+    <input type="submit" value="Delete" class="btn btn-danger"/>
+  </div>
+
+</form>

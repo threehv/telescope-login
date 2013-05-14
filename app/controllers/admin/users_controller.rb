@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
-    find_users.all do | users | 
+    find_user.all do | users | 
       render action: 'index', locals: { users: users }
     end
   end
@@ -21,9 +21,21 @@ class Admin::UsersController < ApplicationController
     render action: 'new', locals: { user: invalid.record }
   end
 
+  def remove
+    find_user.find user_name do | user | 
+      render action: 'remove', locals: { user: user }
+    end
+  end
+
+  def destroy
+    user_editor.delete user_name do
+      redirect_to admin_users_path
+    end
+  end
+
   protected
 
-  def find_users
+  def find_user
     Authenticator::FindUsers.new account: current_account
   end
 
@@ -31,7 +43,15 @@ class Admin::UsersController < ApplicationController
     Authenticator::UserBuilder.new account: current_account
   end
 
+  def user_editor
+    Authenticator::AmendUser.new account: current_account
+  end
+
   def user_params
     params[:account].slice(:login, :email, :password, :password_confirmation)
+  end
+
+  def user_name
+    params[:id]
   end
 end
