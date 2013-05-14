@@ -1,5 +1,5 @@
 <h1>Add a user</h1>
 
-<%= form_for user, url: admin_users_path do | form | %>
+<%= form_for user, url: admin_user_path(user) do | form | %>
   <%= render partial: '/admin/users/form', locals: { form: form, user: user } %>
 <% end %>

@@ -13,12 +13,28 @@ class Admin::UsersController < ApplicationController
 
   def create
     user_builder.create_using user_params do | user |
-      flash[:notice] = "#{user} has been added"
+      flash[:notice] = "#{user.login} has been added"
       redirect_to admin_users_path
     end
   rescue ActiveRecord::RecordInvalid => invalid
     flash[:error] = 'Unable to add user'
     render action: 'new', locals: { user: invalid.record }
+  end
+
+  def edit
+    find_user.find user_name do | user |
+      render action: 'edit', locals: { user: user }
+    end
+  end
+
+  def update
+    user_editor.update user_name, with: user_params do | user |
+      flash[:notice] = "#{user.login} has been updated"
+      redirect_to admin_users_path
+    end
+  rescue ActiveRecord::RecordInvalid => invalid
+    flash[:error] = 'Unable to update user'
+    render action: 'edit', locals: { user: invalid.record }
   end
 
   def remove

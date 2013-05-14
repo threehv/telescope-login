@@ -29,7 +29,7 @@ class Spinach::Features::AdministratorManagesUsers < Spinach::FeatureSteps
   end
 
   step 'I should see an error message' do
-    expect(page).to have_content('Unable to add user')
+    expect(page).to have_css('.formError')
   end
 
   step 'the user should not be added' do
@@ -54,6 +54,29 @@ class Spinach::Features::AdministratorManagesUsers < Spinach::FeatureSteps
     expect(@users.first.login).to be == 'newname'
     expect(@users.first.email).to be == 'newname@example.com'
   end
+
+  step 'I choose to change the user\'s password' do
+    fill_in 'Password', with: 'private'
+    fill_in 'Password confirmation', with: 'private'
+    click_button 'Save'
+  end
+
+  step 'the user password should be updated' do
+    found_user = Masq::Account.authenticate(@users.first.login, 'private')
+    expect(found_user).to be == @users.first
+  end
+
+  step 'I change the user\'s password incorrectly' do
+    fill_in 'Password', with: 'private'
+    fill_in 'Password confirmation', with: 'notthepassword'
+    click_button 'Save'
+  end
+
+  step 'the user password should not be updated' do
+    found_user = Masq::Account.authenticate(@users.first.login, 'private')
+    expect(found_user).to be_nil
+  end
+
 
   step 'I choose to delete a user' do
     within "#account_#{@users.first.id}" do
