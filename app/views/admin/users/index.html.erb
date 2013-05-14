@@ -1,3 +1,9 @@
+<div class="pull-right">
+  <%= form_tag admin_users_path, class: 'form-search', method: 'get' do | form | %>
+    <input type="text" class="search-query" title="Search for" name="q" id="q" value="<%= params[:q] %>"/>
+    <button type="submit" class="btn" title="Search"><i class="icon-search"></i></button>
+  <% end %>
+</div>
 <h1>Users</h1>
 
 <ul class="users thumbnails">

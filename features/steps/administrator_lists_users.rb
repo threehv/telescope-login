@@ -18,6 +18,21 @@ class Spinach::Features::AdministratorListsUsers < Spinach::FeatureSteps
     end
   end
 
+  step 'I search for a user' do
+    within '.form-search' do
+      fill_in 'q', with: @users.first.login
+      click_button 'Search'
+    end
+  end
+
+  step 'I should see only matching users' do
+    within '.users' do
+      expect(page).to have_css("#account_#{@users.first.id}")
+      expect(page).to_not have_css("#account_#{@users.second.id}")
+      expect(page).to_not have_css("#account_#{@users.third.id}")
+    end
+  end
+
   step 'I am not logged in' do
     # do nothing
   end

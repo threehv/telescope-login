@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
-    find_user.all do | users | 
+    find_user.all(query) do | users | 
       render action: 'index', locals: { users: users }
     end
   end
@@ -69,5 +69,9 @@ class Admin::UsersController < ApplicationController
 
   def user_name
     params[:id]
+  end
+
+  def query
+    params[:q]
   end
 end
