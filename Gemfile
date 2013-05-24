@@ -15,6 +15,7 @@ gem 'unicorn'
 gem 'masq', git: 'git@github.com:threehv/masq.git'# path: '/home/rahoulb/src/telescope/masq'
 gem 'kolo'
 gem 'dynamic_form'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'rspec'
@@ -24,7 +25,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capistrano-ext'
   gem 'brightbox'
-  gem 'capistrano-unicorn'
+  gem 'capistrano-unicorn', require: false
 end
 
 # To use ActiveModel has_secure_password
