@@ -3,6 +3,7 @@ gem 'brightbox', '>=2.3.9'
 require 'brightbox/recipes'
 require 'brightbox/passenger'
 require 'capistrano-unicorn'
+set :rake, "bundle exec rake"
 #set :whenever_command, "bundle exec whenever"
 #require "whenever/capistrano"
 
