@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:threehv/masq.git
-  revision: 51dc2a1c32ae92afcb8d56238bc51c48ee7a328d
+  revision: a88bfb8cd457683731923d725209ac828bfb3cfe
   specs:
     masq (0.2.8)
       i18n_data
