@@ -1,13 +1,15 @@
-## Generated with 'brightbox' on 2013-05-24 10:15:58 +0100
+## Generated with 'brightbox' on 2013-05-24 11:00:09 +0100
 gem 'brightbox', '>=2.3.9'
 require 'brightbox/recipes'
+require 'brightbox/passenger'
 require 'capistrano-unicorn'
 #set :whenever_command, "bundle exec whenever"
-#require "whenever/capistrano"
+##require "whenever/capistrano"
 
 # The name of your application.  Used for deployment directory and filenames
 # and Apache configs. Should be unique on the Brightbox
 set :application, "login"
+set :user, "telescope"
 
 # Primary domain name of your application. Used in the Apache configs
 set :domain, "loginhq.co.uk"
@@ -148,24 +150,9 @@ default_run_options[:pty] = true
 # NB. This just affects the default recipes unless you use the
 # 'try_sudo' command to run your commands.
 # set :use_sudo, false
-# set :runner, user## Mongrel settings
-# Addresses that Mongrel listens on. Defaults to :local
-# Use :remote if your mongrels are on a different host to the web
-# server.
-# set :mongrel_host, :local
-# set :mongrel_host, :remote
-# set :mongrel_host, "192.168.1.1"
-# Port number where mongrel starts. Defaults to 9200
-# set :mongrel_port, 9200
-# Number of mongrel servers to start. Defaults to 2
-# set :mongrel_servers, 2
-
-## Mongrel monitoring settings
-# Url to check to make sure application is working.
-# Defaults to "http://localhost"
-# set :mongrel_check_url, "http://localhost"
-# set :mongrel_check_url, "http://user:password@localhost/path/to/check"
-# Maximum amount of memory to use per mongrel instance. Default 110Mb
-# set :mongrel_max_memory, 110
-# Maximum cpu allowable per mongrel. Defaults to 80%
-# set :mongrel_max_cpu, 80
+# set :runner, user## Passenger Configuration
+# Set the method of restarting passenger
+# Defaults to :hard which is used to instantly free up database connections
+# :soft uses the standard touch tmp/restart.txt which leaves database connections
+# lingering until the workers time out
+# set :passenger_restart_strategy, :hard
