@@ -16,6 +16,7 @@ set :domain, "loginhq.co.uk"
 
 ## List of servers
 server "app003.3hv.co.uk", :app, :web, :db, :primary => true
+load 'deploy/assets'
 
 # Target directory for the application on the web and app servers.
 set(:deploy_to) { File.join("", "home", user, application) }
