@@ -5,10 +5,10 @@ app_path = "/home/telescope/login/current"
 worker_processes 3
 preload_app true
 timeout 180
-listen "127.0.0.1:9000"
+listen "127.0.0.1:8080"
 
 # Spawn unicorn master worker for user apps (group: apps)
-user 'telescope', 'apps' 
+user 'telescope', 'telescope'
 
 # Fill path to your app
 working_directory app_path
