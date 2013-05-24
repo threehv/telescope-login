@@ -23,6 +23,7 @@ group :development, :test do
   gem 'capybara'
   gem 'spinach-rails'
   gem 'database_cleaner'
+  gem 'capistrano', '= 2.15.3'
   gem 'capistrano-ext'
   gem 'brightbox'
   gem 'capistrano-unicorn', require: false

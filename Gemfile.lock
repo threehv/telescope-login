@@ -43,7 +43,7 @@ GEM
     brightbox (2.3.9)
       capistrano (>= 2.5)
     builder (3.0.4)
-    capistrano (2.15.4)
+    capistrano (2.15.3)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -93,7 +93,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.3)
     mysql2 (0.3.11)
-    net-scp (1.1.0)
+    net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
@@ -191,6 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   brightbox
+  capistrano (= 2.15.3)
   capistrano-ext
   capistrano-unicorn
   capybara
