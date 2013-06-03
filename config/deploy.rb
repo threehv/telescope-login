@@ -29,7 +29,7 @@ set(:deploy_to) { File.join("", "home", user, application) }
 set :repository, "git@github.com:threehv/telescope-login.git"
 set :scm, :git
 set :deploy_via, :remote_cache
-set :local_shared_files, %w(config/database.yml config/masq.yml)
+set :local_shared_files, %w(config/database.yml config/masq.yml config/locales/en.yml)
 
 after 'deploy:restart', 'unicorn:reload'
 
