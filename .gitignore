@@ -4,3 +4,4 @@
 /tmp
 /config/masq.yml
 /config/database.yml
+/config/deploy.local.rb
