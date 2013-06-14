@@ -1,6 +1,5 @@
-GIT
-  remote: git@github.com:threehv/masq.git
-  revision: fc2f0b36a979e52d5213618cc420a1431c39ce78
+PATH
+  remote: /home/rahoulb/src/telescope/masq
   specs:
     masq (0.2.8)
       i18n_data
@@ -91,7 +90,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.6)
+    multi_json (1.7.7)
     mysql2 (0.3.11)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
