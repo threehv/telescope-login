@@ -31,8 +31,8 @@ set :deploy_via, :remote_cache
 set :local_shared_files, %w(config/database.yml config/masq.yml config/locales/en.yml)
 require "whenever/capistrano"
 
-before 'deploy:symlink', 'unicorn:stop'
-after 'deploy:symlink', 'unicorn:start'
+before 'deploy:restart', 'unicorn:stop'
+after 'deploy:restart', 'unicorn:start'
 
 ### Other options you can set ##
 # Comma separated list of additional domains for Apache
