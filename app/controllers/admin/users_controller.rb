@@ -14,7 +14,7 @@ class Admin::UsersController < ApplicationController
   def create
     user_builder.create_using user_params do | user |
       flash[:notice] = "#{user.login} has been added"
-      redirect_to admin_users_path
+      redirect_to current_account.admin? ? admin_users_path : '/'
     end
   rescue ActiveRecord::RecordInvalid => invalid
     flash[:error] = 'Unable to add user'

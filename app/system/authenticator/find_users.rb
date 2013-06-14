@@ -6,7 +6,7 @@ module Authenticator
 
     def all login_name = nil
       raise SecurityBreach.new if account.nil? || (account == :false) || !account.admin?
-      users = login_name.nil? ? user_storage.all : user_storage.where('login like ?', "%#{login_name}%")
+      users = login_name.nil? ? user_storage.all : user_storage.where('login like :term or email like :term', term: "%#{login_name}%")
       yield users
     end
 
