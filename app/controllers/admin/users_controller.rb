@@ -64,7 +64,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params[:account].slice(:login, :email, :password, :password_confirmation)
+    params[:account].slice(:login, :email, :password, :password_confirmation, :admin)
   end
 
   def user_name
