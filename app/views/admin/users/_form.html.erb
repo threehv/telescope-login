@@ -10,8 +10,10 @@
   <%= form.password_field :password %>
   <%= form.label :password_confirmation %>
   <%= form.password_field :password_confirmation %>
-  <%= form.label :admin %>
-  <%= form.check_box :admin %>
+  <% if current_account.admin? %>
+    <%= form.label :admin %>
+    <%= form.check_box :admin %>
+  <% end %>
 </fieldset>
 <div class="form-actions">
   <%= form.submit 'Save', class: 'btn btn-primary' %>
