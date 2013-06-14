@@ -31,8 +31,6 @@ set :scm, :git
 set :deploy_via, :remote_cache
 set :local_shared_files, %w(config/database.yml config/masq.yml config/locales/en.yml)
 
-after 'deploy:restart', 'unicorn:reload'
-
 ### Other options you can set ##
 # Comma separated list of additional domains for Apache
 # set :domain_aliases, "www.example.com,dev.example.com"
