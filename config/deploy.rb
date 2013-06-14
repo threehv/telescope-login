@@ -4,8 +4,8 @@ require 'brightbox/recipes'
 require 'brightbox/passenger'
 require 'capistrano-unicorn'
 set :rake, "bundle exec rake"
-#set :whenever_command, "bundle exec whenever"
-#require "whenever/capistrano"
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
 
 # The name of your application.  Used for deployment directory and filenames
 # and Apache configs. Should be unique on the Brightbox
