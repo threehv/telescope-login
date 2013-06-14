@@ -5,7 +5,6 @@ require 'brightbox/passenger'
 require 'capistrano-unicorn'
 set :rake, "bundle exec rake"
 set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
 
 # The name of your application.  Used for deployment directory and filenames
 # and Apache configs. Should be unique on the Brightbox
@@ -30,6 +29,7 @@ set :repository, "git@github.com:threehv/telescope-login.git"
 set :scm, :git
 set :deploy_via, :remote_cache
 set :local_shared_files, %w(config/database.yml config/masq.yml config/locales/en.yml)
+require "whenever/capistrano"
 
 ### Other options you can set ##
 # Comma separated list of additional domains for Apache
