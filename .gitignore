@@ -5,3 +5,8 @@
 /config/masq.yml
 /config/database.yml
 /config/deploy.local.rb
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
