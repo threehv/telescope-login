@@ -39,4 +39,4 @@ production:
   pool: 5
   username: <%= ENV['RDS_DB_USERNAME'] %>
   password: <%= ENV['RDS_DB_PASSWORD'] %>
-  host: <%= ENV['RDS_DB_HOST'] %>
+  hostname: <%= ENV['RDS_DB_HOST'] %>
