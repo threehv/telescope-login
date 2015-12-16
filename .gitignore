@@ -2,7 +2,6 @@
 /db/*.sqlite3
 /log/*.log
 /tmp
-/config/masq.yml
 /config/deploy.local.rb
 
 # Elastic Beanstalk Files
